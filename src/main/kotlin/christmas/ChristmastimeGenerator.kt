@@ -5,14 +5,12 @@ class ChristmastimeGenerator(val printable: Printable) {
         notPrintAnythingIfNegative(level)
         giveOnlyTheTrunkWhenLevelIsZero(level)
         if (level == 2) {
-            val tree = """
-                 x
-                xxx
-                 |
-            """
-            printable.print(
-                tree.trimIndent()
+            val tree = listOf(
+                " x\n",
+                "xxx\n",
+                " |"
             )
+            printable.print(tree.joinToString(separator = "") { it })
         }
         if (level == 3) {
             printable.print(
