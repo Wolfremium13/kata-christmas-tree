@@ -5,6 +5,9 @@ class ChristmastimeGenerator(val printable: Printable) {
         if (level < 0) {
             printable.print("")
         }
+        if (level == 0) {
+            printable.print("|")
+        }
     }
 
 }
