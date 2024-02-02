@@ -9,7 +9,8 @@ class ChristmastimeGenerator(val printable: Printable) {
             printable.print("|")
         }
         if (level == 2) {
-            printable.print("""
+            printable.print(
+                """
                  x
                 xxx
                  |
@@ -17,7 +18,8 @@ class ChristmastimeGenerator(val printable: Printable) {
             )
         }
         if (level == 3) {
-            printable.print("""
+            printable.print(
+                """
                  x
                 xxx
                xxxxx
@@ -27,7 +29,8 @@ class ChristmastimeGenerator(val printable: Printable) {
         }
 
         if (level == 4) {
-            printable.print("""
+            printable.print(
+                """
                  x
                 xxx
                xxxxx
