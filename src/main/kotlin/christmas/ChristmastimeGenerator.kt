@@ -23,18 +23,22 @@ class ChristmastimeGenerator(val printable: Printable) {
         }
 
         if (level == 4) {
-            val treeLevels = ArrayList<String>()
-            var leafsCounter = 1
-            IntArray(level) { level - it }.forEach { leafLevel ->
-                val spaceRepetitions = leafLevel - 1
-                val leafRepetitions = leafsCounter
-                val leaf = "x"
-                treeLevels.add(" ".repeat(spaceRepetitions) + leaf.repeat(leafRepetitions) + "\n")
-                leafsCounter += 2
-            }
-            treeLevels.add(putTheTrunk(level))
-            printable.print(treeLevels.joinToString(separator = "") { it })
+            generateTree(level)
         }
+    }
+
+    private fun generateTree(level: Int) {
+        val treeLevels = ArrayList<String>()
+        var leafsCounter = 1
+        IntArray(level) { level - it }.forEach { leafLevel ->
+            val spaceRepetitions = leafLevel - 1
+            val leafRepetitions = leafsCounter
+            val leaf = "x"
+            treeLevels.add(" ".repeat(spaceRepetitions) + leaf.repeat(leafRepetitions) + "\n")
+            leafsCounter += 2
+        }
+        treeLevels.add(putTheTrunk(level))
+        printable.print(treeLevels.joinToString(separator = "") { it })
     }
 
     private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "|"
