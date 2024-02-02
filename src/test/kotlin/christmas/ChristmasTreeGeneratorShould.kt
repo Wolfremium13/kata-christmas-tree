@@ -48,4 +48,19 @@ class ChristmasTreeGeneratorShould {
         """.trimIndent()
         verify(printable).print(smallTree)
     }
+
+    @Test
+    fun `generate a medium size tree when level is medium`() {
+        val mediumLevel = 3
+
+        treeGenerator.generate(mediumLevel)
+
+        val mediumTree = """
+              x
+             xxx
+            xxxxx
+              |
+        """.trimIndent()
+        verify(printable).print(mediumTree)
+    }
 }
