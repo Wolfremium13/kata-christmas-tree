@@ -7,7 +7,7 @@ class ChristmastimeGenerator(val printable: Printable) {
             return
         }
         if (level == 0) {
-            printable.print("|")
+            printable.print(putTheTrunk(1))
             return
         }
         generateTree(level)
