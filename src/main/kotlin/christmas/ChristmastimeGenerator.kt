@@ -10,16 +10,7 @@ class ChristmastimeGenerator(val printable: Printable) {
             printable.print("|")
             return
         }
-        if (level == 2) {
-            generateTree(level)
-        }
-        if (level == 3) {
-            generateTree(level)
-        }
-
-        if (level == 4) {
-            generateTree(level)
-        }
+        generateTree(level)
     }
 
     private fun generateTree(level: Int) {
