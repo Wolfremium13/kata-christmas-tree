@@ -28,7 +28,8 @@ class ChristmastimeGenerator(val printable: Printable) {
             IntArray(level) { level - it }.forEach { leafLevel ->
                 val spaceRepetitions = leafLevel - 1
                 val leafRepetitions = leafsCounter
-                treeLevels.add(" ".repeat(spaceRepetitions) + "x".repeat(leafRepetitions) + "\n")
+                val leaf = "x"
+                treeLevels.add(" ".repeat(spaceRepetitions) + leaf.repeat(leafRepetitions) + "\n")
                 leafsCounter += 2
             }
             treeLevels.add(putTheTrunk(level))
