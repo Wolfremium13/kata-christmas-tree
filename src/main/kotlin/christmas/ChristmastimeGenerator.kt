@@ -10,10 +10,10 @@ class ChristmastimeGenerator(private val printable: Printable) {
             printable.print(putTheTrunk(1))
             return
         }
-        generateTree(level)
+        printable.print(generateTree(level))
     }
 
-    private fun generateTree(level: Int) {
+    private fun generateTree(level: Int): String {
         val treeLevels = ArrayList<String>()
         var leafsCounter = 1
         IntArray(level) { level - it }.forEach { leafLevel ->
@@ -24,7 +24,7 @@ class ChristmastimeGenerator(private val printable: Printable) {
             leafsCounter += 2
         }
         treeLevels.add(putTheTrunk(level))
-        printable.print(treeLevels.joinToString(separator = "") { it })
+        return treeLevels.joinToString(separator = "") { it }
     }
 
     private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "|"
