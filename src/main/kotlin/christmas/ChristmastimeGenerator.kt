@@ -1,16 +1,16 @@
 package dev.wolfremium.www.christmas
 
 class ChristmastimeGenerator(private val printable: Printable) {
-    fun generate(level: Int) {
-        if (level < 0) {
+    fun generate(treeLevels: Int) {
+        if (treeLevels < 0) {
             printable.print("")
             return
         }
-        if (level == 0) {
+        if (treeLevels == 0) {
             printable.print(putTheTrunk(1))
             return
         }
-        printable.print(generateTree(level))
+        printable.print(generateTree(treeLevels))
     }
 
     private fun generateTree(level: Int): String {
