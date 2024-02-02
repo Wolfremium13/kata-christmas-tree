@@ -16,6 +16,15 @@ class ChristmastimeGenerator(val printable: Printable) {
             """.trimIndent()
             )
         }
+        if (level == 3) {
+            printable.print("""
+                 x
+                xxx
+               xxxxx
+                 |
+            """.trimIndent()
+            )
+        }
     }
 
 }
