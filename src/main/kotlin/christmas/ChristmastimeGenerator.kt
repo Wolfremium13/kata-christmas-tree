@@ -36,7 +36,7 @@ class ChristmastimeGenerator(val printable: Printable) {
         }
     }
 
-    private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "x".repeat(0) + "|"
+    private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "|"
 
     private fun giveOnlyTheTrunkWhenLevelIsZero(level: Int) {
         if (level == 0) {
