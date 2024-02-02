@@ -8,7 +8,7 @@ class ChristmastimeGenerator(val printable: Printable) {
             val tree = listOf(
                 " ".repeat(level - 1) + "x".repeat(1) + "\n",
                 " ".repeat(0) + "x".repeat(3) + "\n",
-                " ".repeat(level - 1) + "x".repeat(0) + "|"
+                putTheTrunk(level)
             )
             printable.print(tree.joinToString(separator = "") { it })
         }
@@ -17,7 +17,7 @@ class ChristmastimeGenerator(val printable: Printable) {
                 " ".repeat(level - 1) + "x".repeat(1) + "\n",
                 " ".repeat(level - 2) + "x".repeat(3) + "\n",
                 " ".repeat(0) + "x".repeat(5) + "\n",
-                " ".repeat(level - 1) + "x".repeat(0) + "|"
+                putTheTrunk(level)
             )
             printable.print(tree.joinToString(separator = "") { it })
         }
@@ -28,11 +28,15 @@ class ChristmastimeGenerator(val printable: Printable) {
                 " ".repeat(level - 2) + "x".repeat(3) + "\n",
                 " ".repeat(level - 3) + "x".repeat(5) + "\n",
                 " ".repeat(0) + "x".repeat(7) + "\n",
-                " ".repeat(level - 1) + "x".repeat(0) + "|"
+                putTheTrunk(level)
             )
+
+
             printable.print(tree.joinToString(separator = "") { it })
         }
     }
+
+    private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "x".repeat(0) + "|"
 
     private fun giveOnlyTheTrunkWhenLevelIsZero(level: Int) {
         if (level == 0) {
