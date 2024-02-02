@@ -13,26 +13,24 @@ class ChristmastimeGenerator(val printable: Printable) {
             printable.print(tree.joinToString(separator = "") { it })
         }
         if (level == 3) {
-            printable.print(
-                """
-                 x
-                xxx
-               xxxxx
-                 |
-            """.trimIndent()
+            val tree = listOf(
+                "  x\n",
+                " xxx\n",
+                "xxxxx\n",
+                "  |"
             )
+            printable.print(tree.joinToString(separator = "") { it })
         }
 
         if (level == 4) {
-            printable.print(
-                """
-                 x
-                xxx
-               xxxxx
-              xxxxxxx
-                 |
-            """.trimIndent()
+            val tree = listOf(
+                "   x\n",
+                "  xxx\n",
+                " xxxxx\n",
+                "xxxxxxx\n",
+                "   |"
             )
+            printable.print(tree.joinToString(separator = "") { it })
         }
     }
 
