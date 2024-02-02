@@ -3,9 +3,7 @@ package dev.wolfremium.www.christmas
 class ChristmastimeGenerator(val printable: Printable) {
     fun generate(level: Int) {
         notPrintAnythingIfNegative(level)
-        if (level == 0) {
-            printable.print("|")
-        }
+        giveOnlyTheTrunkWhenLevelIsZero(level)
         if (level == 2) {
             printable.print(
                 """
@@ -36,6 +34,12 @@ class ChristmastimeGenerator(val printable: Printable) {
                  |
             """.trimIndent()
             )
+        }
+    }
+
+    private fun giveOnlyTheTrunkWhenLevelIsZero(level: Int) {
+        if (level == 0) {
+            printable.print("|")
         }
     }
 
