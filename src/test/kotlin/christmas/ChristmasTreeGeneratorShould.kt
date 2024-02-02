@@ -28,4 +28,20 @@ class ChristmasTreeGeneratorShould {
 
         verify(printable).print("|")
     }
+
+    @Test
+    fun `generate an small tree when level is low`(){
+        val printable = mock<Printable>()
+        val treeGenerator = ChristmastimeGenerator(printable)
+        val lowLevel = 2
+
+        treeGenerator.generate(lowLevel)
+
+        val smallTree = """
+             x
+            xxx
+             |
+        """.trimIndent()
+        verify(printable).print(smallTree)
+    }
 }
