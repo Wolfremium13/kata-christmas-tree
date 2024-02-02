@@ -2,8 +2,14 @@ package dev.wolfremium.www.christmas
 
 class ChristmastimeGenerator(val printable: Printable) {
     fun generate(level: Int) {
-        notPrintAnythingIfNegative(level)
-        giveOnlyTheTrunkWhenLevelIsZero(level)
+        if (level < 0) {
+            printable.print("")
+            return
+        }
+        if (level == 0) {
+            printable.print("|")
+            return
+        }
         if (level == 2) {
             generateTree(level)
         }
@@ -31,17 +37,5 @@ class ChristmastimeGenerator(val printable: Printable) {
     }
 
     private fun putTheTrunk(level: Int) = " ".repeat(level - 1) + "|"
-
-    private fun giveOnlyTheTrunkWhenLevelIsZero(level: Int) {
-        if (level == 0) {
-            printable.print("|")
-        }
-    }
-
-    private fun notPrintAnythingIfNegative(level: Int) {
-        if (level < 0) {
-            printable.print("")
-        }
-    }
 
 }
