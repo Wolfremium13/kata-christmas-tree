@@ -1,6 +1,6 @@
 package dev.wolfremium.www.christmas
 
-class ChristmastimeGenerator(val printable: Printable) {
+class ChristmastimeGenerator(private val printable: Printable) {
     fun generate(level: Int) {
         if (level < 0) {
             printable.print("")
