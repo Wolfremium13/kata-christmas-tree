@@ -17,4 +17,15 @@ class ChristmasTreeGeneratorShould {
 
         verify(printable).print("")
     }
+
+    @Test
+    fun `gives only the trunk when there is not enough level`(){
+        val printable = mock<Printable>()
+        val treeGenerator = ChristmastimeGenerator(printable)
+        val level = 0
+
+        treeGenerator.generate(level)
+
+        verify(printable).print("|")
+    }
 }
